@@ -22,12 +22,13 @@ Vue.createApp({
       this.rotateY = 0;
       // z軸旋轉
       this.rotateZ = 0;
+      this.color = "#8d81f3";
     },
     async copyBtn() {
       let text = `transform:${this.box.transform}`;
       await navigator.clipboard.writeText(text);
 
-      alert("已經複製樣式到剪貼版")
+      alert("已經複製樣式到剪貼版");
     },
   },
   computed: {
@@ -39,7 +40,7 @@ Vue.createApp({
             rotateY(${this.rotateY}deg)
             rotateZ(${this.rotateZ}deg)
             `,
-            backgroundColor:`${this.color}`,
+        backgroundColor: `${this.color}`,
       };
     },
   },
