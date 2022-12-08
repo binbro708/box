@@ -1,0 +1,43 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <title>透視方塊</title>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <h2>透視方塊</h2>
+      <main>
+        <section class="settings">
+          <div class="settings-container">
+            <label>perspective(遠近): {{perspective}}px;</label>
+            <input type="range" min="0" max="999" v-model="perspective" />
+
+            <label>X軸旋轉: {{rotateX}}deg; </label>
+            <input type="range" min="-180" max="180" v-model="rotateX" />
+
+            <label>Y軸旋轉: {{rotateY}}deg; </label>
+            <input type="range" min="-180" max="180" v-model="rotateY" />
+
+            <label>Z軸旋轉: {{rotateZ}}deg; </label>
+            <input type="range" min="-180" max="180" v-model="rotateZ" />
+            <label>方塊顏色: {{color}}; </label>
+            <input type="color" v-model="color" />
+
+            <button type="button" @click.prevent="resetBtn">重置</button>
+            <button type="button" @click.prevent="copyBtn">複製</button>
+          </div>
+        </section>
+        <section class="output">
+          <div class="box-container">
+            <div class="box" :style="box"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
